@@ -5,12 +5,7 @@ Find longest words and how many times they appears in text with python.
 * You can work on texts that contain more than largest word with the same length
 * All the largest words will be printed not just the first one on the list
 ## Requirements
-* python 3.x
-## run the code
-1. clone the file
-2. Go to the file path in Terminal
-3. type `python3 longest_words.py`
-
+* python >= 3.6
 ## Input mod
 You can Toggle between two input modes,
 
