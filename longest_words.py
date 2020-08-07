@@ -4,9 +4,13 @@ words_list = open(str(input("file_path:"))).read().split()
 ###input from keyboard
 # words_list = input("type:").split()
 
-max_length = len(max(words_list))
-
 longest_words = []
+words_len = []
+
+for word in words_list:
+    words_len.append(len(word))
+
+max_length = max(words_len)
 
 for word in words_list:
     if len(word) == max_length:
