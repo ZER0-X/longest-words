@@ -1,40 +1,22 @@
 ###input from a file
-words_list = open(str(input("file_path:"))).read().split()
+words_file = open(input("file_path:")).read()
 
 ###input from keyboard
-# words_list = input("type:").split()
+# words_file = input("type:")
 
-longest_words = []
-words_len = []
+words_list = list(reversed(sorted(words_file.split(), key=len)))
 
-for word in words_list:
-    words_len.append(len(word))
+max_len = len(words_list[0])
 
-max_length = max(words_len)
+printed_words = []
 
 for word in words_list:
-    if len(word) == max_length:
-        longest_words.append(word)
+    if len(word) == max_len and word not in printed_words:
+        repetition = words_list.count(word)
+        if repetition == 1:
+            print(f"-----> {word}")
+        else:
+            print(f"-----> {word} [{repetition}]")
+        printed_words.append(word)
 
-longest_words_not_repeated = set(longest_words)
-
-
-print(f"""
-max length = {max_length}
-""")
-
-for word in longest_words_not_repeated:
-    repeated = longest_words.count(word)
-    
-    if repeated == 1 :
-        print(f"---->'{word}'")
-        
-    elif repeated != 1 :
-        print(f"---->'{word}' [{repeated}]")
-        
-    print("")
-
-
-print(f"""
-
-The max length is {max_length} Letters""")
+print(f"max length = {max_len}")
